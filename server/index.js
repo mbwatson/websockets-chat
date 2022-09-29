@@ -4,7 +4,7 @@ const http = require('http')
 const { Server } = require('socket.io')
 
 const PORT = 3030
-const CLIENT_URI = 'http://localhost:8080'
+const CLIENT_URI = '*'
 
 const corsOptions = {
   origin: CLIENT_URI,
@@ -22,7 +22,7 @@ io.on('connection', socket => {
 
   socket.on('message_from_client', text => {
     console.log(`message received from: ${ socket.id }:`)
-    console.log(` - ${ text }"`)
+    console.log(` > "${ text }"`)
     io.emit('new_message_broadcast', {
       userId: socket.id,
       text: text,

@@ -1,0 +1,9 @@
+# websockets demo chat app
+
+## getting started
+
+running `docker-compose up` from the project root will spin up two containers: a server on port 3030 and a client on port 8080.
+
+## share the UI via Ngrok
+
+`./path/to/ngrok http 8080 --host-header="localhost:8080"`
