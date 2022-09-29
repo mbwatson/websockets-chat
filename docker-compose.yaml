@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  server:
+    container_name: ws-demo-server
+    build:
+      context: ./server/
+      dockerfile: Dockerfile
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3030:3030
+    restart: always
+
+  client:
+    container_name: ws-demo-client
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 8080:8080
+    depends_on:
+      - server
+    restart: always

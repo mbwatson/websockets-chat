@@ -1,0 +1,28 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 10pt;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+  background: linear-gradient(120deg, var(--color-bg), var(--color-unc-campus-sandstone));
+}
+
+header, footer {
+  background-color: #ddd;
+  padding: 1rem;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+}
